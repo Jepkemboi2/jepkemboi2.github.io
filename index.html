@@ -3,46 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBS News Ticker</title>
+    <title>Financial News Dashboard</title>
     <style>
         body {
-            margin: 0;
-            overflow: hidden;
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
-        .ticker {
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .live-video {
+            grid-column: span 2;
+            position: relative;
+        }
+
+        video {
             width: 100%;
-            background: #1e1e1e;
-            color: #00ffcc;
-            white-space: nowrap;
-            overflow: hidden;
-            box-shadow: 0px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .breaking-news {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 5em;
-            padding: 40px;
+            bottom: 10px;
+            left: 0;
+            background: red;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
         }
-        .ticker-content {
-            display: inline-block;
-            padding: 40px;
-            animation: ticker-scroll 8s linear infinite;
+
+        .market-overview {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
         }
-        @keyframes ticker-scroll {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
+
+        .index {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .chart img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .news {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #ffa500;
         }
     </style>
 </head>
 <body>
-    <div class="ticker">
-        <div class="ticker-content">Breaking News: Market opens with NSE 20 Share Index at 1800 points... | Safaricom shares up 2.5%...</div>
+    <div class="container">
+        <!-- Live Video Section -->
+        <div class="live-video">
+            <video src="live-stream.mp4" autoplay muted></video>
+            <div class="breaking-news">BREAKING NEWS: Powell: US Federal Budget is on an Unsustainable Path</div>
+        </div>
+        
+        <!-- Stock Market Overview -->
+        <div class="market-overview">
+            <div class="index">Russell 2000 Index: <span class="value">2,277.26</span> <span class="change">▼10.68 (-0.47%)</span></div>
+            <div class="chart"><img src="chart.png" alt="Russell 2000 Chart"></div>
+        </div>
+        
+        <!-- News Section -->
+        <div class="news">
+            <h2>Germany in Talks Over Gas Storage Support as Levels Decline</h2>
+            <p>Germany's gas market manager said it's in 'intensive discussions' with authorities about potential subsidies...</p>
+        </div>
     </div>
 </body>
 </html>
