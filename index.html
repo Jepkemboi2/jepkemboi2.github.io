@@ -1,119 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenya Stocks Overlay</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        
-        /* Stock Ticker */
-        #stock-ticker {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 350px;
-            height: 250px;
-        }
-
-        /* Stock Chart Panel */
-        #stock-chart {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 400px;
-            height: 250px;
-        }
-
-        /* Scrolling News */
-        #news-ticker {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            background: #ff9800;
-            color: black;
-            padding: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            font-weight: bold;
-        }
-
-        /* Scrolling animation */
-        @keyframes scrollText {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-
-        #news-content {
-            display: inline-block;
-            animation: scrollText 15s linear infinite;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- TradingView Stock Ticker for Kenyan Stocks -->
-    <div id="stock-ticker">
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
-                <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-                    <span class="blue-text">Track all markets on TradingView</span>
-                </a>
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
-            {
-              "symbols": [
-                { "description": "KCB", "proName": "NSEKE:KCB" },
-                { "description": "Safaricom", "proName": "NSEKE:SCOM" },
-                { "description": "Equity Bank", "proName": "NSEKE:EQTY" },
-                { "description": "Co-op Bank", "proName": "NSEKE:COOP" },
-                { "description": "ABSA Kenya", "proName": "NSEKE:ABSA" }
-              ],
-              "isTransparent": false,
-              "showSymbolLogo": true,
-              "colorTheme": "dark",
-              "locale": "en"
-            }
-            </script>
-        </div>
-    </div>
-
-    <!-- TradingView Chart -->
-    <div id="stock-chart">
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-        {
-            "colorTheme": "dark",
-            "dateRange": "12M",
-            "showChart": true,
-            "locale": "en",
-            "largeChartUrl": "",
-            "isTransparent": false,
-            "showSymbolLogo": true,
-            "tabs": [
-                {
-                    "title": "NSE",
-                    "symbols": [
-                        { "s": "NSEKE:SCOM", "d": "Safaricom" },
-                        { "s": "NSEKE:KCB", "d": "KCB Bank" },
-                        { "s": "NSEKE:EQTY", "d": "Equity Bank" }
-                    ]
-                }
-            ]
-        }
-        </script>
-    </div>
-
-    <!-- Scrolling News Ticker -->
-    <div id="news-ticker">
-        <div id="news-content">📢 Breaking News: Safaricom shares rise 2% | KCB posts record profits | Market reacts to CBK interest rate decision</div>
-    </div>
-
-</body>
-</html>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "description": "NSEKCB",
+      "proName": "NSEKE:KCB"
+    },
+    {
+      "description": "Safaricom",
+      "proName": "NSEKE:SCOM"
+    },
+    {
+      "description": "equity",
+      "proName": "NSEKE:EQTY"
+    },
+    {
+      "description": "co-op bank",
+      "proName": "NSEKE:COOP"
+    },
+    {
+      "description": "absa Kenya",
+      "proName": "NSEKE:ABSA"
+    }
+  ],
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
