@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Overlay</title>
+    <title>Kenya Stocks Overlay</title>
     <style>
         body {
             background-color: black;
@@ -17,8 +17,8 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 300px;
-            height: 200px;
+            width: 350px;
+            height: 250px;
         }
 
         /* Stock Chart Panel */
@@ -52,36 +52,43 @@
 
         #news-content {
             display: inline-block;
-            animation: scrollText 20s linear infinite;
-            will-change: transform;
+            animation: scrollText 15s linear infinite;
         }
     </style>
 </head>
 <body>
 
-    <!-- TradingView Stock Ticker -->
-    <div id="stock-ticker"></div>
-    <script type="text/javascript">
-        new TradingView.widget({
-            "container_id": "stock-ticker",
-            "symbols": [
-                { "proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100" },
-                { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
-                { "proName": "FX_IDC:USDKES", "title": "USD/KES" },
-                { "proName": "NSE:SCOM", "title": "Safaricom" },
-                { "proName": "NSE:KCB", "title": "KCB Bank" }
-            ],
-            "isTransparent": false,
-            "colorTheme": "dark",
-            "locale": "en"
-        });
-    </script>
+    <!-- TradingView Stock Ticker for Kenyan Stocks -->
+    <div id="stock-ticker">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright">
+                <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                    <span class="blue-text">Track all markets on TradingView</span>
+                </a>
+            </div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+            {
+              "symbols": [
+                { "description": "KCB", "proName": "NSEKE:KCB" },
+                { "description": "Safaricom", "proName": "NSEKE:SCOM" },
+                { "description": "Equity Bank", "proName": "NSEKE:EQTY" },
+                { "description": "Co-op Bank", "proName": "NSEKE:COOP" },
+                { "description": "ABSA Kenya", "proName": "NSEKE:ABSA" }
+              ],
+              "isTransparent": false,
+              "showSymbolLogo": true,
+              "colorTheme": "dark",
+              "locale": "en"
+            }
+            </script>
+        </div>
+    </div>
 
     <!-- TradingView Chart -->
-    <div id="stock-chart"></div>
-    <script type="text/javascript">
-        new TradingView.widget({
-            "container_id": "stock-chart",
+    <div id="stock-chart">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
             "colorTheme": "dark",
             "dateRange": "12M",
             "showChart": true,
@@ -93,14 +100,15 @@
                 {
                     "title": "NSE",
                     "symbols": [
-                        { "s": "NSE:SCOM", "d": "Safaricom" },
-                        { "s": "NSE:KCB", "d": "KCB Bank" },
-                        { "s": "NSE:EABL", "d": "EABL" }
+                        { "s": "NSEKE:SCOM", "d": "Safaricom" },
+                        { "s": "NSEKE:KCB", "d": "KCB Bank" },
+                        { "s": "NSEKE:EQTY", "d": "Equity Bank" }
                     ]
                 }
             ]
-        });
-    </script>
+        }
+        </script>
+    </div>
 
     <!-- Scrolling News Ticker -->
     <div id="news-ticker">
