@@ -7,87 +7,109 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
+            background-color: #0d0d0d;
             color: #ffffff;
             margin: 0;
             padding: 0;
         }
 
-        .container {
+        .dashboard {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
             padding: 20px;
         }
 
-        .live-video {
-            grid-column: span 2;
+        .section {
+            background: #252525;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .ticker-box {
+            background: black;
+            color: white;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: Arial, sans-serif;
             position: relative;
         }
 
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .breaking-news {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            background: red;
-            color: white;
-            padding: 10px;
+        .intraday {
+            background: #ffffff;
+            color: black;
             font-weight: bold;
-            width: 100%;
-            text-align: center;
+            padding: 5px;
         }
 
-        .market-overview {
-            background: #252525;
-            padding: 20px;
-            border-radius: 10px;
+        .index-name {
+            background: #ffcc00;
+            color: black;
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 5px;
         }
 
-        .index {
+        .index-value {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .index-change {
+            color: red;
             font-size: 18px;
-            font-weight: bold;
-        }
-
-        .chart img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .news {
-            background: #252525;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h2 {
-            color: #ffa500;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Live Video Section -->
-        <div class="live-video">
-            <video src="live-stream.mp4" autoplay muted></video>
-            <div class="breaking-news">BREAKING NEWS: Powell: US Federal Budget is on an Unsustainable Path</div>
-        </div>
-        
-        <!-- Stock Market Overview -->
-        <div class="market-overview">
-            <div class="index">Russell 2000 Index: <span class="value">2,277.26</span> <span class="change">▼10.68 (-0.47%)</span></div>
-            <div class="chart"><img src="chart.png" alt="Russell 2000 Chart"></div>
-        </div>
-        
-        <!-- News Section -->
-        <div class="news">
-            <h2>Germany in Talks Over Gas Storage Support as Levels Decline</h2>
-            <p>Germany's gas market manager said it's in 'intensive discussions' with authorities about potential subsidies...</p>
+    <div class="ticker-box">
+        <div class="intraday">INTRADAY</div>
+        <div id="index-container">
+            <div class="index-name"></div>
         </div>
     </div>
+
+    <script>
+        const indices = [
+            { name: "S&P 500 Index", proName: "FOREXCOM:SPXUSD" },
+            { name: "US 100 Cash CFD", proName: "FOREXCOM:NSXUSD" },
+            { name: "EUR to USD", proName: "FX_IDC:EURUSD" },
+            { name: "Bitcoin", proName: "BITSTAMP:BTCUSD" },
+            { name: "Ethereum", proName: "BITSTAMP:ETHUSD" }
+        ];
+
+        let currentIndex = 0;
+
+        function updateIndex() {
+            const indexData = indices[currentIndex];
+            document.querySelector(".index-name").innerText = indexData.name;
+            
+            const widgetContainer = document.querySelector("#index-container");
+            widgetContainer.innerHTML = `<div class='index-name'>${indexData.name}</div>`;
+            
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async = true;
+            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-tickers.js";
+            script.innerHTML = JSON.stringify({
+                symbols: [{ proName: indexData.proName, title: "" }],
+                isTransparent: true,
+                showSymbolLogo: false,
+                colorTheme: "dark",
+                locale: "en"
+            });
+
+            widgetContainer.appendChild(script);
+
+            currentIndex = (currentIndex + 1) % indices.length;
+        }
+
+        updateIndex();
+        setInterval(updateIndex, 10000);
+    </script>
 </body>
 </html>
