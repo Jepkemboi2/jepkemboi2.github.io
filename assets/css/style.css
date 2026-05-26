@@ -72,7 +72,7 @@ h6 {
 }
 
 #header h1 {
-  font-size: 48px;
+  font-size: 44px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -177,7 +177,9 @@ h6 {
 
 #header.header-top h1 {
   margin-right: auto;
-  font-size: 36px;
+  font-size: 26px;
+  max-width: 260px;
+  white-space: nowrap;
 }
 
 #header.header-top img {
@@ -200,7 +202,8 @@ h6 {
   }
 
   #header.header-top h1 {
-    font-size: 26px;
+    font-size: 20px;
+    max-width: 210px;
   }
 }
 
@@ -830,6 +833,55 @@ section .container {
   background: rgba(0, 0, 0, 0.6);
 }
 
+.portfolio .portfolio-card {
+  min-height: 260px;
+  padding: 34px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio .portfolio-card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #18d26e;
+  color: #fff;
+  font-size: 30px;
+}
+
+.portfolio .portfolio-card .portfolio-info {
+  opacity: 1;
+  position: static;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.portfolio .portfolio-card .portfolio-info::before,
+.portfolio .portfolio-card .portfolio-info::after,
+.portfolio .portfolio-card::before {
+  display: none;
+}
+
+.portfolio .portfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: #18d26e;
+  background: rgba(24, 210, 110, 0.16);
+}
+
+.portfolio .portfolio-card .portfolio-links a {
+  margin: 0;
+  font-size: 24px;
+}
+
 .portfolio .portfolio-wrap::before {
   content: "";
   background: rgba(0, 0, 0, 0.6);
@@ -938,6 +990,32 @@ section .container {
 .portfolio .portfolio-wrap:hover .portfolio-info::after {
   bottom: 15px;
   right: 15px;
+}
+
+.portfolio .portfolio-wrap.portfolio-card::before,
+.portfolio .portfolio-wrap.portfolio-card .portfolio-info::before,
+.portfolio .portfolio-wrap.portfolio-card .portfolio-info::after {
+  display: none;
+}
+
+.portfolio .portfolio-wrap.portfolio-card .portfolio-info {
+  opacity: 1;
+  position: static;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.portfolio .portfolio-wrap.portfolio-card .portfolio-info p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+  text-transform: none;
+}
+
+.portfolio .portfolio-wrap.portfolio-card .portfolio-info h4 {
+  margin-bottom: 2px;
 }
 
 /*--------------------------------------------------------------
