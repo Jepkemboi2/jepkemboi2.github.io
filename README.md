@@ -1,10 +1,10 @@
-# Portfolio Project
+# Sharon Jepkemboi Portfolio
 
-Welcome to my portfolio project! This repository showcases my work, skills, and achievements as a Software Engineer.
+This portfolio showcases Sharon Jepkemboi's background in Building Technology, professional translation services, freelance support, and contact information.
 
 ## Live Demo
 
-A live demo of the project can be accessed [here](https://sawezablon.github.io/).
+A live demo can be hosted with GitHub Pages after this repository is published under Sharon's GitHub account.
 
 ## Table of Contents
 
@@ -20,41 +20,51 @@ A live demo of the project can be accessed [here](https://sawezablon.github.io/)
 
 ## Project Description
 
-Provide a brief and engaging introduction to your portfolio project. Explain its purpose, goals, and target audience. Highlight what makes your portfolio unique and valuable.
+This is a static personal portfolio website for a Nairobi-based Building Technology graduate and freelance professional. It highlights Sharon's services, project categories, personal profile, and contact channels.
 
 ## Installation
 
-Outline the steps required to set up and run your portfolio project locally. Include any dependencies, packages, or tools that need to be installed.
+No build step is required. Open `index.html` directly in a browser or publish the repository with GitHub Pages.
 
 ## Usage
 
-Provide instructions on how to use your portfolio website. Describe its features and functionalities. If applicable, explain any interactive elements or specific user actions that visitors can take.
+Visitors can learn about Sharon, review her services and project categories, then contact her by email or phone.
 
 ## Features
 
-List and describe the key features and functionalities of your portfolio website. Highlight any notable achievements or unique aspects of your work.
+- Home section with service and contact calls to action.
+- Professional summary and personal profile.
+- Services for translation, freelance support, and Building Technology.
+- Portfolio categories for translation, freelance support, and academic building projects.
+- Contact section with location, email, phone, and freelance status.
 
 ## Technologies Used
 
-- List the technologies, programming languages, frameworks, and libraries used in building your portfolio website. Provide brief explanations of how each technology was utilized.
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Bootstrap Icons
+- Boxicons
+- Remix Icon
 
 ## Demo
 
-If your portfolio project is hosted online, provide a link to the live demo. Include any login credentials or access instructions if necessary.
+After publishing, the demo will be available at the GitHub Pages URL configured for Sharon's repository.
 
 ## Contributing
 
-If you are open to contributions or collaborations, provide guidelines on how others can contribute to your portfolio project. Explain the process for submitting pull requests, reporting issues, or suggesting improvements.
+This is a personal portfolio. Updates should be made directly by the site owner.
 
 ## Credits
 
-Acknowledge and give credit to any external resources, libraries, or assets used in your portfolio project. Provide links to their respective authors, repositories, or licenses.
+Template based on the Personal Bootstrap template by BootstrapMade.
 
 ## Contact
 
-- Include your name or preferred name.
-- Provide your email address or other preferred contact methods.
-- Optionally, include links to your website, blog, LinkedIn profile, or other professional profiles.
+- Sharon Jepkemboi
+- sharonsawe691@gmail.com
+- +254 726 941168
 
 Feel free to reach out to me with any questions, suggestions, or opportunities for collaboration!
 

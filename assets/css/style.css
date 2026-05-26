@@ -99,6 +99,49 @@ h6 {
   padding-bottom: 6px;
 }
 
+.hero-subtitle {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid #18d26e;
+  border-radius: 4px;
+  background: #18d26e;
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-btn:hover {
+  background: #35e888;
+  border-color: #35e888;
+  color: #fff;
+}
+
+.hero-btn-outline {
+  background: transparent;
+}
+
+.hero-btn-outline:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+}
+
 #header img {
   padding: 0;
   margin: 0;
@@ -139,6 +182,14 @@ h6 {
 
   #header .social-links {
     margin-top: 15px;
+  }
+
+  .hero-subtitle {
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   #header .container {
