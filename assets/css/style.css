@@ -107,6 +107,45 @@ h6 {
   line-height: 1.7;
 }
 
+.hero-actions,
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-btn,
+.profile-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #18d26e;
+  border-radius: 4px;
+  background: #18d26e;
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-btn:hover,
+.profile-actions a:hover {
+  background: #35e888;
+  border-color: #35e888;
+  color: #fff;
+}
+
+.hero-btn-outline {
+  background: transparent;
+}
+
+.hero-btn-outline:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+}
+
 #header img {
   padding: 0;
   margin: 0;
@@ -151,6 +190,11 @@ h6 {
 
   .hero-subtitle {
     text-align: center;
+  }
+
+  .hero-actions,
+  .profile-actions {
+    justify-content: center;
   }
 
   #header .container {
@@ -561,6 +605,67 @@ section .container {
 
 .interests .icon-box:hover {
   background: rgba(255, 255, 255, 0.12);
+}
+
+/*--------------------------------------------------------------
+# Tools & Growth
+--------------------------------------------------------------*/
+.tools .tool-box,
+.growth .growth-box {
+  height: 100%;
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
+}
+
+.tools .tool-box:hover,
+.growth .growth-box:hover {
+  transform: translateY(-4px);
+  border-color: #18d26e;
+  background: rgba(24, 210, 110, 0.14);
+}
+
+.tools .tool-box i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #18d26e;
+  color: #fff;
+  font-size: 24px;
+}
+
+.tools .tool-box h4,
+.growth .growth-box h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tools .tool-box p,
+.growth .growth-box p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.growth .growth-box span {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgba(24, 210, 110, 0.16);
+  color: #18d26e;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
